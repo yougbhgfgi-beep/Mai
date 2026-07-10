@@ -1,22 +1,22 @@
-const CACHE_NAME = 'love-story-cache-v8'
+const CACHE_NAME = 'love-story-cache-v9'
 const URLS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/images/icon-heart.svg',
-  '/images/icon-192.png',
-  '/images/icon-192-maskable.png',
-  '/images/icon-512.png',
-  '/images/icon-512-maskable.png',
-  '/maze.html',
-  '/images/photo-1.jpeg',
-  '/images/photo-2.jpeg',
-  '/images/photo-3.jpeg',
-  '/images/photo-4.jpeg',
-  '/images/photo-5.jpeg',
-  '/assets/index-new.js',
-  '/assets/index-DtXZcElU.css',
-  '/04_-_Maak_Alby.mp3'
+  './',
+  './index.html',
+  './manifest.json',
+  './images/icon-heart.svg',
+  './images/icon-192.png',
+  './images/icon-192-maskable.png',
+  './images/icon-512.png',
+  './images/icon-512-maskable.png',
+  './maze.html',
+  './images/photo-1.jpeg',
+  './images/photo-2.jpeg',
+  './images/photo-3.jpeg',
+  './images/photo-4.jpeg',
+  './images/photo-5.jpeg',
+  './assets/index-new.js',
+  './assets/index-DtXZcElU.css',
+  './media/04_-_Maak_Alby.mp3'
 ]
 
 self.addEventListener('install', (event) => {
