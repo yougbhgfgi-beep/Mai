@@ -1,7 +1,26 @@
-const CACHE_NAME = 'love-story-cache-v7'
-const URLS_TO_CACHE = ['/', '/index.html', '/manifest.json', '/images/icon-heart.svg', '/maze.html', '/images/photo-1.jpeg', '/images/photo-2.jpeg', '/images/photo-3.jpeg', '/images/photo-4.jpeg', '/images/photo-5.jpeg', '/images/photo-6.jpeg', '/assets/index-new.js', '/04_-_Maak_Alby.mp3']
+const CACHE_NAME = 'love-story-cache-v8'
+const URLS_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/images/icon-heart.svg',
+  '/images/icon-192.png',
+  '/images/icon-192-maskable.png',
+  '/images/icon-512.png',
+  '/images/icon-512-maskable.png',
+  '/maze.html',
+  '/images/photo-1.jpeg',
+  '/images/photo-2.jpeg',
+  '/images/photo-3.jpeg',
+  '/images/photo-4.jpeg',
+  '/images/photo-5.jpeg',
+  '/assets/index-new.js',
+  '/assets/index-DtXZcElU.css',
+  '/04_-_Maak_Alby.mp3'
+]
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting()
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
   )
@@ -24,6 +43,6 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keys) => Promise.all(keys.map((k) => {
       if (k !== CACHE_NAME) return caches.delete(k)
       return null
-    })))
+    }))).then(() => clients.claim())
   )
 })
