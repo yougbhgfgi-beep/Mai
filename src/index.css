@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cairo:wght@300;400;600;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e11d48;
+  border-radius: 3px;
+}
+
+@keyframes heartFloat {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(244,63,94,0.3), 0 0 40px rgba(244,63,94,0.1); }
+  50% { box-shadow: 0 0 30px rgba(244,63,94,0.6), 0 0 60px rgba(244,63,94,0.2); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-4px); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+.heart-particle {
+  position: absolute;
+  color: #e11d48;
+  font-size: 20px;
+  animation: heartFloat 3s linear forwards;
+  pointer-events: none;
+}
+
+.milestone-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #e11d48, transparent);
+  transform: translateX(50%);
+}
+
+@media (max-width: 768px) {
+  .milestone-line {
+    right: 16px;
+  }
+}
